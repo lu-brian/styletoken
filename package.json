@@ -1,0 +1,392 @@
+{
+  "name": "styletoken",
+  "displayName": "Style Token",
+	"description": "",
+	"version": "0.0.1",
+	"license": "MIT",
+  "engines": {
+    "vscode": "^1.70.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"configuration": [
+			{	"id": "token-1",
+				"title": "Decoration for Style (1)",
+				"properties": {
+					"styletoken.token1.backgroundColor": {
+						"type": "string",
+						"default": "#18AFF1.30",
+						"markdownDescription": "Background color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token1.borderColor": {
+						"type": "string",
+						"default": "#18AFF1",
+						"markdownDescription": "Border color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token1.borderWidth": {
+						"type": "string",
+						"default": "0 0 1px 0",
+						"markdownDescription": "Border width in `px`. Can also set the location in which they appear `top right bottom left` e.g. `0 0 1px 0`"
+					},
+					"styletoken.token1.borderStyle": {
+						"type": "string",
+						"default": "solid",
+						"enum": [
+							"solid",
+							"dotted",
+							"dashed"
+						],
+						"markdownDescription": "Sets the style of the border"
+					},
+					"styletoken.token1.overviewRulerColor": {
+						"type": "string",
+						"default": "#18AFF1.50",
+						"markdownDescription": "Color of the indicator in the scrollbar. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token1.overviewRulerLane": {
+						"type": "string",
+						"default": "Left",
+						"enum": [
+							"Left",
+							"Center",
+							"Right",
+							"Full"
+						],
+						"markdownDescription": "Sets the location of the indicator."
+					}
+				}
+			},
+			{	"id": "token-2",
+				"title": "Decoration for Style (2)",
+				"properties": {
+					"styletoken.token2.backgroundColor": {
+						"type": "string",
+						"default": "#F1B918.30",
+						"markdownDescription": "Background color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token2.borderColor": {
+						"type": "string",
+						"default": "#F1B918",
+						"markdownDescription": "Border color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token2.borderWidth": {
+						"type": "string",
+						"default": "0 0 1px 0",
+						"markdownDescription": "Border width in `px`. Can also set the location in which they appear `top right bottom left` e.g. `0 0 1px 0`"
+					},
+					"styletoken.token2.borderStyle": {
+						"type": "string",
+						"default": "solid",
+						"enum": [
+							"solid",
+							"dotted",
+							"dashed"
+						],
+						"markdownDescription": "Sets the style of the border"
+					},
+					"styletoken.token2.overviewRulerColor": {
+						"type": "string",
+						"default": "#F1B918.50",
+						"markdownDescription": "Color of the indicator in the scrollbar. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token2.overviewRulerLane": {
+						"type": "string",
+						"default": "Left",
+						"enum": [
+							"Left",
+							"Center",
+							"Right",
+							"Full"
+						],
+						"markdownDescription": "Sets the location of the indicator."
+					}
+				}
+			},
+			{	"id": "token-3",
+				"title": "Decoration for Style (3)",
+				"properties": {
+					"styletoken.token3.backgroundColor": {
+						"type": "string",
+						"default": "#DF3774.30",
+						"markdownDescription": "Background color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token3.borderColor": {
+						"type": "string",
+						"default": "#DF3774",
+						"markdownDescription": "Border color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token3.borderWidth": {
+						"type": "string",
+						"default": "0 0 1px 0",
+						"markdownDescription": "Border width in `px`. Can also set the location in which they appear `top right bottom left` e.g. `0 0 1px 0`"
+					},
+					"styletoken.token3.borderStyle": {
+						"type": "string",
+						"default": "solid",
+						"enum": [
+							"solid",
+							"dotted",
+							"dashed"
+						],
+						"markdownDescription": "Sets the style of the border"
+					},
+					"styletoken.token3.overviewRulerColor": {
+						"type": "string",
+						"default": "#DF3774.50",
+						"markdownDescription": "Color of the indicator in the scrollbar. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token3.overviewRulerLane": {
+						"type": "string",
+						"default": "Left",
+						"enum": [
+							"Left",
+							"Center",
+							"Right",
+							"Full"
+						],
+						"markdownDescription": "Sets the location of the indicator."
+					}
+				}
+			},
+			{	"id": "token-4",
+				"title": "Decoration for Style (4)",
+				"properties": {
+					"styletoken.token4.backgroundColor": {
+						"type": "string",
+						"default": "#8728E7.30",
+						"markdownDescription": "Background color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token4.borderColor": {
+						"type": "string",
+						"default": "#8728E7",
+						"markdownDescription": "Border color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token4.borderWidth": {
+						"type": "string",
+						"default": "0 0 1px 0",
+						"markdownDescription": "Border width in `px`. Can also set the location in which they appear `top right bottom left` e.g. `0 0 1px 0`"
+					},
+					"styletoken.token4.borderStyle": {
+						"type": "string",
+						"default": "solid",
+						"enum": [
+							"solid",
+							"dotted",
+							"dashed"
+						],
+						"markdownDescription": "Sets the style of the border"
+					},
+					"styletoken.token4.overviewRulerColor": {
+						"type": "string",
+						"default": "#8728E7.50",
+						"markdownDescription": "Color of the indicator in the scrollbar. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token4.overviewRulerLane": {
+						"type": "string",
+						"default": "Left",
+						"enum": [
+							"Left",
+							"Center",
+							"Right",
+							"Full"
+						],
+						"markdownDescription": "Sets the location of the indicator."
+					}
+				}
+			},
+			{	"id": "token-5",
+				"title": "Decoration for Style (5)",
+				"properties": {
+					"styletoken.token5.backgroundColor": {
+						"type": "string",
+						"default": "#93FF00.20",
+						"markdownDescription": "Background color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token5.borderColor": {
+						"type": "string",
+						"default": "#93FF00",
+						"markdownDescription": "Border color in `hex`. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token5.borderWidth": {
+						"type": "string",
+						"default": "0 0 1px 0",
+						"markdownDescription": "Border width in `px`. Can also set the location in which they appear `top right bottom left` e.g. `0 0 1px 0`"
+					},
+					"styletoken.token5.borderStyle": {
+						"type": "string",
+						"default": "solid",
+						"enum": [
+							"solid",
+							"dotted",
+							"dashed"
+						],
+						"markdownDescription": "Sets the style of the border"
+					},
+					"styletoken.token5.overviewRulerColor": {
+						"type": "string",
+						"default": "#93FF00.50",
+						"markdownDescription": "Color of the indicator in the scrollbar. To set opacity, use a period `.` followed by the percentage `0 - 100`"
+					},
+					"styletoken.token5.overviewRulerLane": {
+						"type": "string",
+						"default": "Left",
+						"enum": [
+							"Left",
+							"Center",
+							"Right",
+							"Full"
+						],
+						"markdownDescription": "Sets the location of the indicator."
+					}
+				}
+			}
+		],
+		"commands": [
+			{
+				"category": "Style Token",
+				"command": "styletoken.token1.addStyle",
+				"title": "Add Style (1)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token2.addStyle",
+				"title": "Add Style (2)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token3.addStyle",
+				"title": "Add Style (3)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token4.addStyle",
+				"title": "Add Style (4)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token5.addStyle",
+				"title": "Add Style (5)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token1.setStyle",
+				"title": "Set Style (1)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token2.setStyle",
+				"title": "Set Style (2)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token3.setStyle",
+				"title": "Set Style (3)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token4.setStyle",
+				"title": "Set Style (4)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token5.setStyle",
+				"title": "Set Style (5)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token1.removeStyle",
+				"title": "Remove Style (1)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token2.removeStyle",
+				"title": "Remove Style (2)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token3.removeStyle",
+				"title": "Remove Style (3)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token4.removeStyle",
+				"title": "Remove Style (4)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token5.removeStyle",
+				"title": "Remove Style (5)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token1.findPreviousStyle",
+				"title": "Find Previous Style (1)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token2.findPreviousStyle",
+				"title": "Find Previous Style (2)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token3.findPreviousStyle",
+				"title": "Find Previous Style (3)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token4.findPreviousStyle",
+				"title": "Find Previous Style (4)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token5.findPreviousStyle",
+				"title": "Find Previous Style (5)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token1.findNextStyle",
+				"title": "Find Next Style (1)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token2.findNextStyle",
+				"title": "Find Next Style (2)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token3.findNextStyle",
+				"title": "Find Next Style (3)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token4.findNextStyle",
+				"title": "Find Next Style (4)"
+			},
+			{
+				"category": "Style Token",
+				"command": "styletoken.token5.findNextStyle",
+				"title": "Find Next Style (5)"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.7",
+		"@types/vscode": "^1.32.0",
+		"@typescript-eslint/eslint-plugin": "^5.30.0",
+		"@typescript-eslint/parser": "^5.30.0",
+		"eslint": "^8.13.0",
+		"typescript": "^4.7.2"
+	}
+}

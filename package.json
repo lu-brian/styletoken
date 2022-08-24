@@ -4,6 +4,7 @@
 	"description": "",
 	"version": "0.0.1",
 	"license": "MIT",
+	"publisher": "lu-brian",
 	"repository": {
     "type": "git",
     "url": "https://github.com/lu-brian/styletoken.git"

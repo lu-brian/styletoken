@@ -27,6 +27,10 @@ export interface Decorator {
  export class Token {
   // using URI as the key for faster lookup
   path: Path | undefined;
+  configurations?: {
+    isCaseSensitive?: boolean;
+    isMatchWholeWords?: boolean;
+  };
 
   constructor(
     public decorator: vscode.TextEditorDecorationType,

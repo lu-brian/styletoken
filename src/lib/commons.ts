@@ -63,7 +63,8 @@ export const getPositionBefore = (
   const positionIndex = positions.findIndex(position => {
     return position.isAfterOrEqual(activeEditor.selection.start);
   });
-  return positions.slice(positionIndex - 1)[0];
+  return positionIndex === -1 ? 
+    positions.slice(positionIndex)[0] : positions.slice(positionIndex - 1)[0];
 };
 
 /**

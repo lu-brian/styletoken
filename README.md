@@ -19,4 +19,5 @@ Hotkeys:
 Never issues :)
 
 ## Release Notes
-- 1.0.0: add phrase search
+- 0.0.1: add phrase search
+- 0.0.2: fix findPreviousStyle

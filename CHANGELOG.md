@@ -4,6 +4,7 @@ All notable changes to the "styletokens" extension will be documented in this fi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [v0.0.2]
 
-- Initial release
+- Initial release: added phrase search
+- v0.0.2: fix findPreviousStyle

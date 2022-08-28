@@ -1,11 +1,9 @@
 A VSCode version of NotePad++'s Style Tokens
-
+![Style and navigate text](./images/public.gif)
 ## Features
 - fast search
 - bookmarking
 - text differentiation
-
-![Style and navigate text](./images/public.gif)
 
 ## Extension Settings
 Settings for Styles can be found in the settings pane under 'Style Token'

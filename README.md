@@ -1,4 +1,5 @@
 A VSCode version of NotePad++'s Style Tokens
+
 ![Style and navigate text](./images/public.gif)
 ## Features
 - fast search

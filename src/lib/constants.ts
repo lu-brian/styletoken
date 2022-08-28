@@ -1,8 +1,19 @@
+import * as vscode from 'vscode';
+
 // extension information
 export const EXTENSION_ID = 'styletoken';
 export const EXTENSION_NAME = 'Style Tokens';
 
 // style token decorators
+export const DECORATION_RANGE_BEHAVIOR = vscode.DecorationRangeBehavior.ClosedClosed;
+
+export const OVERVIEW_RULER_LANE_MAP: { [key: string]: vscode.OverviewRulerLane } = {
+  'Center': vscode.OverviewRulerLane.Center,
+  'Full': vscode.OverviewRulerLane.Full,
+  'Left': vscode.OverviewRulerLane.Left,
+  'Right': vscode.OverviewRulerLane.Right,
+};
+
 export const ALPHA_MAP: { [key: number]: string } = {
   100: 'FF',
   99: 'FC',

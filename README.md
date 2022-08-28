@@ -1,9 +1,11 @@
 A VSCode version of NotePad++'s Style Tokens
 
 ## Features
-- not bad
-- should try
-- please
+- fast search
+- bookmarking
+- text differentiation
+
+![Style and navigate text](./images/public.gif)
 
 ## Extension Settings
 Settings for Styles can be found in the settings pane under 'Style Token'
@@ -16,8 +18,4 @@ Hotkeys:
 - Find Next Style: finds the next position for the style. Wraps to the beginning.
 
 ## Known Issues
-Never issues :)
-
-## Release Notes
-- 0.0.1: add phrase search
-- 0.0.2: fix findPreviousStyle
+- edits causes incorrect range lookups

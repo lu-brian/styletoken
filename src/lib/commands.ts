@@ -19,7 +19,7 @@ export const addStyle = (
   };
 
   const cachedRanges = token.path?.[`${activeEditor?.document.uri.path}`]?.ranges ?? [];
-  const ranges = [...cachedRanges ,...getPhraseMatches(activeEditor, text)];
+  const ranges = [...cachedRanges ,...getPhraseMatches(activeEditor, token.options, text)];
   const positions = ranges
     .map(range => range.start)
     .sort((a, b) => activeEditor.document.offsetAt(a) - activeEditor.document.offsetAt(b));
@@ -43,7 +43,7 @@ export const setStyle = (
     return;
   };
 
-  const ranges = getPhraseMatches(activeEditor, text);
+  const ranges = getPhraseMatches(activeEditor, token.options, text);
   const positions = ranges.map( range => range.start);
   const path = activeEditor.document.uri.path;
   token.path = {

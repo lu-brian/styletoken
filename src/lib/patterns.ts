@@ -1,13 +1,20 @@
 import * as vscode from 'vscode';
 
-import { FlatRange } from './models';
+import {
+  FlatRange,
+  TokenOptions,
+} from './models';
 import { getRange } from './commons';
 
 export const getPhraseMatches = (
   activeEditor: vscode.TextEditor,
+  options: TokenOptions,
   phrase: string,
 ): vscode.Range[] => {
-  const documentText = activeEditor.document.getText();
+  const documentText = options.isCaseSensitive === true ?
+    activeEditor.document.getText() : activeEditor.document.getText().toLowerCase();
+  phrase = options.isCaseSensitive === true ?
+    phrase : phrase.toLowerCase();
   const location = {
     flatRanges: [] as FlatRange[],
     lastOffset: 0

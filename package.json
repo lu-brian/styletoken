@@ -64,6 +64,11 @@
 							"Full"
 						],
 						"markdownDescription": "Sets the location of the indicator."
+					},
+					"styletoken.token1.isCaseSensitive": {
+						"type": "boolean",
+						"default": "true",
+						"markdownDescription": "Option to turn on/off case sensitivity"
 					}
 				}
 			},
@@ -110,6 +115,11 @@
 							"Full"
 						],
 						"markdownDescription": "Sets the location of the indicator."
+					},
+					"styletoken.token2.isCaseSensitive": {
+						"type": "boolean",
+						"default": "true",
+						"markdownDescription": "Option to turn on/off case sensitivity"
 					}
 				}
 			},
@@ -156,6 +166,11 @@
 							"Full"
 						],
 						"markdownDescription": "Sets the location of the indicator."
+					},
+					"styletoken.token3.isCaseSensitive": {
+						"type": "boolean",
+						"default": "true",
+						"markdownDescription": "Option to turn on/off case sensitivity"
 					}
 				}
 			},
@@ -202,6 +217,11 @@
 							"Full"
 						],
 						"markdownDescription": "Sets the location of the indicator."
+					},
+					"styletoken.token4.isCaseSensitive": {
+						"type": "boolean",
+						"default": "true",
+						"markdownDescription": "Option to turn on/off case sensitivity"
 					}
 				}
 			},
@@ -248,6 +268,11 @@
 							"Full"
 						],
 						"markdownDescription": "Sets the location of the indicator."
+					},
+					"styletoken.token5.isCaseSensitive": {
+						"type": "boolean",
+						"default": false,
+						"markdownDescription": "Option to turn on/off case sensitivity"
 					}
 				}
 			}

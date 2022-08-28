@@ -8,3 +8,4 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 - Initial release: added phrase search
 - v0.0.2: fix findPreviousStyle
+- v0.0.3: add case sensitivity, fix overviewRulerLane, and fix decoration range check

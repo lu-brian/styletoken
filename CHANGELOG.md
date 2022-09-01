@@ -13,13 +13,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Fixed
 - overviewRulerLane: options now update ruler lane
 - decoration range check: styles will no longer grow when typing at the edge
-### Fixed
-- findPreviousStyle
-- v0.0.2: fix findPreviousStyle
 ## [v0.0.2] - 2022-08-24
 ### Fixed
-- findPreviousStyle
-- v0.0.2: fix findPreviousStyle
+- findPreviousStyle: does not jump two spaces when at the end of the document now
 
 ## [0.0.1] - 2022-08-22
 - Initial release of Style Token

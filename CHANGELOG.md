@@ -4,7 +4,7 @@ All notable changes to the "styletokens" extension will be documented in this fi
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [v0.0.4] - 2022-08-28
+## [v0.0.4] - 2022-08-31
 ### Fixed
 - find styles: position will now update when text changes
 ## [v0.0.3] - 2022-08-28

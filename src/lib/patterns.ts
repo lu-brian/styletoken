@@ -4,13 +4,12 @@ import {
   FlatRange,
   TokenOptions,
 } from './models';
-import { getRange } from './commons';
 
 export const getPhraseMatches = (
   activeEditor: vscode.TextEditor,
   options: TokenOptions,
   phrase: string,
-): vscode.Range[] => {
+): FlatRange[] => {
   const documentText = options.isCaseSensitive === true ?
     activeEditor.document.getText() : activeEditor.document.getText().toLowerCase();
   phrase = options.isCaseSensitive === true ?
@@ -30,7 +29,7 @@ export const getPhraseMatches = (
       lastOffset: endOffset
     };
   }, location);
-  return locations.flatRanges.map(flatRange => getRange(flatRange, activeEditor));
+  return locations.flatRanges;
 };
 
 // regex

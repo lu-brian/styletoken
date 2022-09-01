@@ -68,30 +68,43 @@ export const getPositionBefore = (
 };
 
 /**
+ * Gets an array of vscode.Range from an array of flatRange
+ *
+ * @param activeEditor
+ * @param flatRanges
+ */
+export const getRanges = (
+  activeEditor: vscode.TextEditor,
+  flatRanges: FlatRange[],
+): vscode.Range[] => {
+  return flatRanges.map(flatRange => getRange(activeEditor, flatRange));
+};
+
+/**
  * Gets a vscode.Range value from flatRange
  *
- * @param flatRange
  * @param activeEditor
+ * @param flatRange
  */
 export const getRange = (
-  flatRange: FlatRange,
   activeEditor: vscode.TextEditor,
-  ): vscode.Range => {
+  flatRange: FlatRange,
+): vscode.Range => {
   return new vscode.Range(
-    getPosition(flatRange.startOffset, activeEditor), 
-    getPosition(flatRange.endOffset, activeEditor)
+    getPosition(activeEditor, flatRange.startOffset), 
+    getPosition(activeEditor, flatRange.endOffset)
   );
 };
 
 /**
  * Gets a vscode.Position value from offset
  *
- * @param offset
  * @param activeEditor
+ * @param offset
  */
 export const getPosition = (
-  offset: number,
   activeEditor: vscode.TextEditor,
-  ): vscode.Position => {
+  offset: number,
+): vscode.Position => {
   return activeEditor.document.positionAt(offset);
 };

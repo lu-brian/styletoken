@@ -15,13 +15,7 @@ import {
  */
 export const getTokens = (
   extensionId: string,
-): { [key: string]: {
-  decorator: Decorator,
-  option: {
-    isCaseSensitive: boolean,
-    isMatchWholeWord: boolean,
-  },
-} } => {
+): { [key: string]: { decorator: Decorator, option: TokenOptions } } => {
   const tokenNames = getTokenNames(extensionId);
   const tokenOptions = getTokenConfigurations(tokenNames, extensionId);
   return tokenNames.reduce((accumulator, tokenName, index) => {
@@ -60,12 +54,10 @@ const getTokenConfigurations = (
       },
       rangeBehavior: DECORATION_RANGE_BEHAVIOR,
     };
-    
     const option: TokenOptions = {
       isCaseSensitive: configuration.get('isCaseSensitive') ?? true,
       isMatchWholeWord: configuration.get('isMatchWholeWord') ?? false,
     };
-
     configurations.push({ decorator, option });
   });
   return configurations;

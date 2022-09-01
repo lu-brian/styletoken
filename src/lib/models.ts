@@ -1,8 +1,5 @@
 import * as vscode from 'vscode';
 
-type Size = '1px' | '2px' | '3px';
-type BorderStyle = 'dotted' | 'dashed' | 'solid';
-
 /**
  * Highlight configurations. The `decorator` nomenclature
  * is interchangable with `style`. However, `style` is 
@@ -24,19 +21,8 @@ export interface Decorator {
   rangeBehavior: vscode.DecorationRangeBehavior;
 };
 
-/**
- * Style Token containing the location of highlights,
- * decorations, and options.
- */
- export class Token {
-  // using URI as the key for faster lookup
-  path: Path | undefined;
-
-  constructor(
-    public decorator: vscode.TextEditorDecorationType,
-    public options: TokenOptions,
-  ){}
-};
+type Size = '1px' | '2px' | '3px';
+type BorderStyle = 'dotted' | 'dashed' | 'solid';
 
 export interface Path extends Record<string, CachedEditor> {
 }
@@ -54,11 +40,9 @@ export interface TokenOptions {
  */
 export interface CachedEditor {
   ranges: vscode.Range[];
+  offsets: number[];
   positions: vscode.Position[];
-  texts?: [{
-    text: string;
-    count: number;
-  }];
+  texts: string[];
 };
 
 /**

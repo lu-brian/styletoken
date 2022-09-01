@@ -1,15 +1,18 @@
 import * as vscode from 'vscode';
 
+import { getTokens } from './configuration';
 import {
   addStyle,
   setStyle,
-  refreshStyle,
   removeStyle,
   findPreviousStyle,
   findNextStyle,
-} from './lib/commands';
-import { getTokens } from './configuration';
-import { Token } from './lib/models';
+} from './lib/disposables/commands';
+import {
+  refreshStyleActive,
+  refreshStyleCached,
+} from './lib/disposables/listeners';
+import { Token } from './lib/token';
 
 /**
  * Main registration function for commands and listeners
@@ -22,20 +25,29 @@ export const registration = (extensionId: string): vscode.Disposable[] => {
       vscode.window.createTextEditorDecorationType(value.decorator),
       value.option,
     );
-    disposables.push(getListenerDisposables(token));
+    disposables.push(...getListenerDisposables(token));
     disposables.push(...getCommandDisposables(extensionId, token, key));
-    // test
-    // disposables.push(vscode.commands.registerCommand(`${extensionId}.token1.test`, () => {
-    //   vscode.window.activeTextEditor?.setDecorations()
-    // }))
   };
   return disposables;
 };
 
 const getListenerDisposables = (
   token: Token,
-): vscode.Disposable => {  
-  return vscode.window.onDidChangeVisibleTextEditors(() => refreshStyle(token));
+): vscode.Disposable[] => {  
+  const disposables: vscode.Disposable[] = [];
+  disposables.push(vscode.window.onDidChangeVisibleTextEditors(() => {
+    const activeEditor = vscode.window.activeTextEditor;
+    if (activeEditor != null) {
+      refreshStyleCached(activeEditor, token);
+    }
+  }));
+  disposables.push(vscode.workspace.onDidChangeTextDocument(() => {
+    const activeEditor = vscode.window.activeTextEditor;
+    if (activeEditor != null) {
+      refreshStyleActive(activeEditor, token);
+    }
+  }));
+  return disposables;
 };
 
 const getCommandDisposables = (
@@ -54,7 +66,10 @@ const getCommandDisposables = (
   functions.map(fn => {
     disposables.push(
       vscode.commands.registerCommand(`${extensionId}.${tokenName}.${fn.name}`, () => {
-        fn(token);
+        const activeEditor = vscode.window.activeTextEditor;
+        if (activeEditor != null) {
+          fn(activeEditor, token);;
+        }
       })
     );
   });

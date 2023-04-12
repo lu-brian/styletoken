@@ -52,6 +52,11 @@ export const removeStyle = (
   activeEditor.setDecorations(token.decorator, []);
 };
 
+export const removeStyles = (
+  activeEditor: vscode.TextEditor,
+  tokens: Token[],
+): void => tokens.forEach((token) => removeStyle(activeEditor, token));
+
 export const findPreviousStyle = async (
   activeEditor: vscode.TextEditor,
   token: Token,

@@ -1,16 +1,16 @@
 {
-  "name": "styletoken",
-  "displayName": "Style Token",
+	"name": "styletoken",
+	"displayName": "Style Token",
 	"description": "",
 	"version": "0.0.5",
 	"license": "MIT",
 	"publisher": "lu-brian",
 	"repository": {
-    "type": "git",
-    "url": "https://github.com/lu-brian/styletoken.git"
+		"type": "git",
+		"url": "https://github.com/lu-brian/styletoken.git"
 	},
-  "engines": {
-    "vscode": "^1.70.0"
+	"engines": {
+		"vscode": "^1.70.0"
 	},
 	"categories": [
 		"Other"
@@ -21,7 +21,8 @@
 	"main": "./out/extension.js",
 	"contributes": {
 		"configuration": [
-			{	"id": "token-1",
+			{
+				"id": "token-1",
 				"title": "Decoration for Style (1)",
 				"properties": {
 					"styletoken.token1.backgroundColor": {
@@ -72,7 +73,8 @@
 					}
 				}
 			},
-			{	"id": "token-2",
+			{
+				"id": "token-2",
 				"title": "Decoration for Style (2)",
 				"properties": {
 					"styletoken.token2.backgroundColor": {
@@ -123,7 +125,8 @@
 					}
 				}
 			},
-			{	"id": "token-3",
+			{
+				"id": "token-3",
 				"title": "Decoration for Style (3)",
 				"properties": {
 					"styletoken.token3.backgroundColor": {
@@ -174,7 +177,8 @@
 					}
 				}
 			},
-			{	"id": "token-4",
+			{
+				"id": "token-4",
 				"title": "Decoration for Style (4)",
 				"properties": {
 					"styletoken.token4.backgroundColor": {
@@ -225,7 +229,8 @@
 					}
 				}
 			},
-			{	"id": "token-5",
+			{
+				"id": "token-5",
 				"title": "Decoration for Style (5)",
 				"properties": {
 					"styletoken.token5.backgroundColor": {
@@ -278,6 +283,11 @@
 			}
 		],
 		"commands": [
+			{
+				"category": "Style Token",
+				"command": "styletoken.removeStyles",
+				"title": "Remove All Styles"
+			},
 			{
 				"category": "Style Token",
 				"command": "styletoken.token1.addStyle",

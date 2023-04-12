@@ -8,10 +8,10 @@ export const EXTENSION_NAME = 'Style Tokens';
 export const DECORATION_RANGE_BEHAVIOR = vscode.DecorationRangeBehavior.ClosedClosed;
 
 export const OVERVIEW_RULER_LANE_MAP: { [key: string]: vscode.OverviewRulerLane } = {
-  'Center': vscode.OverviewRulerLane.Center,
-  'Full': vscode.OverviewRulerLane.Full,
-  'Left': vscode.OverviewRulerLane.Left,
-  'Right': vscode.OverviewRulerLane.Right,
+  Center: vscode.OverviewRulerLane.Center,
+  Full: vscode.OverviewRulerLane.Full,
+  Left: vscode.OverviewRulerLane.Left,
+  Right: vscode.OverviewRulerLane.Right,
 };
 
 export const ALPHA_MAP: { [key: number]: string } = {

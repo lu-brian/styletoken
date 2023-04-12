@@ -24,9 +24,9 @@ export const getTextSelection = (): string | undefined => {
     return;
   }
   const cursor = activeEditor.selection.start;
-  const selection = activeEditor.selection.isEmpty ?
-    activeEditor.document.getWordRangeAtPosition(cursor) :
-    activeEditor.selection;
+  const selection = activeEditor.selection.isEmpty
+    ? activeEditor.document.getWordRangeAtPosition(cursor)
+    : activeEditor.selection;
   if (selection == null) {
     return;
   }
@@ -44,9 +44,9 @@ export const getPositionAfter = (
   cachedEditor: CachedEditor,
 ): vscode.Position => {
   const positions = cachedEditor.positions;
-  return positions.find(position => {
-    return position.isAfter(activeEditor.selection.start);
-  }) ?? positions[0];
+  return positions.find(
+    (position) => position.isAfter(activeEditor.selection.start),
+  ) ?? positions[0];
 };
 
 /**
@@ -60,40 +60,11 @@ export const getPositionBefore = (
   cachedEditor: CachedEditor,
 ): vscode.Position => {
   const positions = cachedEditor.positions;
-  const positionIndex = positions.findIndex(position => {
-    return position.isAfterOrEqual(activeEditor.selection.start);
-  });
-  return positionIndex === -1 ? 
-    positions.slice(positionIndex)[0] : positions.slice(positionIndex - 1)[0];
-};
-
-/**
- * Gets an array of vscode.Range from an array of flatRange
- *
- * @param activeEditor
- * @param flatRanges
- */
-export const getRanges = (
-  activeEditor: vscode.TextEditor,
-  flatRanges: FlatRange[],
-): vscode.Range[] => {
-  return flatRanges.map(flatRange => getRange(activeEditor, flatRange));
-};
-
-/**
- * Gets a vscode.Range value from flatRange
- *
- * @param activeEditor
- * @param flatRange
- */
-export const getRange = (
-  activeEditor: vscode.TextEditor,
-  flatRange: FlatRange,
-): vscode.Range => {
-  return new vscode.Range(
-    getPosition(activeEditor, flatRange.startOffset), 
-    getPosition(activeEditor, flatRange.endOffset)
+  const positionIndex = positions.findIndex(
+    (position) => position.isAfterOrEqual(activeEditor.selection.start),
   );
+  return positionIndex === -1
+    ? positions.slice(positionIndex)[0] : positions.slice(positionIndex - 1)[0];
 };
 
 /**
@@ -105,6 +76,29 @@ export const getRange = (
 export const getPosition = (
   activeEditor: vscode.TextEditor,
   offset: number,
-): vscode.Position => {
-  return activeEditor.document.positionAt(offset);
-};
+): vscode.Position => activeEditor.document.positionAt(offset);
+
+/**
+ * Gets a vscode.Range value from flatRange
+ *
+ * @param activeEditor
+ * @param flatRange
+ */
+export const getRange = (
+  activeEditor: vscode.TextEditor,
+  flatRange: FlatRange,
+): vscode.Range => new vscode.Range(
+  getPosition(activeEditor, flatRange.startOffset),
+  getPosition(activeEditor, flatRange.endOffset),
+);
+
+/**
+ * Gets an array of vscode.Range from an array of flatRange
+ *
+ * @param activeEditor
+ * @param flatRanges
+ */
+export const getRanges = (
+  activeEditor: vscode.TextEditor,
+  flatRanges: FlatRange[],
+): vscode.Range[] => flatRanges.map((flatRange) => getRange(activeEditor, flatRange));

@@ -20,20 +20,21 @@ import { Token } from './lib/token';
 export const registration = (extensionId: string): vscode.Disposable[] => {
   const tokens = getTokens(extensionId);
   const disposables: vscode.Disposable[] = [];
-  for (let [key, value] of Object.entries(tokens)) {
+  for (const [key, value] of Object.entries(tokens)) {
     const token = new Token(
       vscode.window.createTextEditorDecorationType(value.decorator),
       value.option,
     );
+
     disposables.push(...getListenerDisposables(token));
     disposables.push(...getCommandDisposables(extensionId, token, key));
-  };
+  }
   return disposables;
 };
 
 const getListenerDisposables = (
   token: Token,
-): vscode.Disposable[] => {  
+): vscode.Disposable[] => {
   const disposables: vscode.Disposable[] = [];
   disposables.push(vscode.window.onDidChangeVisibleTextEditors(() => {
     const activeEditor = vscode.window.activeTextEditor;
@@ -63,14 +64,14 @@ const getCommandDisposables = (
     findNextStyle,
   ];
   const disposables: vscode.Disposable[] = [];
-  functions.map(fn => {
+  functions.forEach((fn) => {
     disposables.push(
       vscode.commands.registerCommand(`${extensionId}.${tokenName}.${fn.name}`, () => {
         const activeEditor = vscode.window.activeTextEditor;
         if (activeEditor != null) {
-          fn(activeEditor, token);;
+          fn(activeEditor, token);
         }
-      })
+      }),
     );
   });
   return disposables;

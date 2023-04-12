@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-import { 
+import {
   getActiveEditorURI,
   getPositionAfter,
   getPositionBefore,
@@ -21,10 +21,10 @@ export const addStyle = (
   const cachedRange = token.getCachedEditor(activeEditor)?.ranges ?? [];
   const ranges = [
     ...cachedRange,
-    ...getRanges(activeEditor, getPhraseMatches(activeEditor, token.options, text))
+    ...getRanges(activeEditor, getPhraseMatches(activeEditor, token.options, text)),
   ];
   const positions = ranges
-    .map(range => range.start)
+    .map((range) => range.start)
     .sort((a, b) => activeEditor.document.offsetAt(a) - activeEditor.document.offsetAt(b));
   token.addCachedEditor(activeEditor, [], positions, ranges, text);
   activeEditor.setDecorations(token.decorator, ranges);
@@ -39,7 +39,7 @@ export const setStyle = (
     return;
   }
   const ranges = getRanges(activeEditor, getPhraseMatches(activeEditor, token.options, text));
-  const positions = ranges.map(range => range.start);
+  const positions = ranges.map((range) => range.start);
   token.setCachedEditor(activeEditor, [], positions, ranges, text);
   activeEditor.setDecorations(token.decorator, ranges);
 };

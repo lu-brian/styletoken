@@ -13,7 +13,9 @@
         "@typescript-eslint/semi": "warn",
         "curly": "warn",
         "no-throw-literal": "warn",
-        "semi": "off"
+        "semi": "off",
+        "prefer-destructuring": "off",
+        "import/prefer-default-export": "off"
     },
     "ignorePatterns": [
         "out",

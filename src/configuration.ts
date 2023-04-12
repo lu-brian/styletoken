@@ -19,38 +19,38 @@ export const getTokens = (
   const tokenNames = getTokenNames(extensionId);
   const tokenOptions = getTokenConfigurations(tokenNames, extensionId);
   return tokenNames.reduce((accumulator, tokenName, index) => {
-    return {...accumulator, [tokenName]: tokenOptions[index]};
+    return { ...accumulator, [tokenName]: tokenOptions[index] };
   }, {});
 };
 
 const getTokenNames = (
-  extensionId: string
+  extensionId: string,
 ): string[] => {
   return Object
     .keys(vscode.workspace.getConfiguration(extensionId))
-    .filter((key => {
+    .filter((key) => {
       return /^token\d$/.test(key);
-    }));
+    });
 };
 
 const getTokenConfigurations = (
   tokenNames: string[],
-  extensionId: string
+  extensionId: string,
 ): { decorator: Decorator, option: TokenOptions }[] => {
   const configurations: { decorator: Decorator, option: TokenOptions }[] = [];
-  tokenNames.map(token => {
-    const configuration = vscode.workspace.getConfiguration(`${extensionId + '.' + token}`);
+  tokenNames.forEach((token) => {
+    const configuration = vscode.workspace.getConfiguration(`${`${extensionId}.${token}`}`);
     const decorator: Decorator = {
-      backgroundColor: getHexWithAlpha(configuration.get("backgroundColor")),
-      borderWidth: configuration.get("borderWidth"),
-      borderStyle: configuration.get("borderStyle"),
-      overviewRulerColor: getHexWithAlpha(configuration.get("overviewRulerColor")),
-      overviewRulerLane: OVERVIEW_RULER_LANE_MAP[`${configuration.get("overviewRulerLane")}`],
+      backgroundColor: getHexWithAlpha(configuration.get('backgroundColor')),
+      borderWidth: configuration.get('borderWidth'),
+      borderStyle: configuration.get('borderStyle'),
+      overviewRulerColor: getHexWithAlpha(configuration.get('overviewRulerColor')),
+      overviewRulerLane: OVERVIEW_RULER_LANE_MAP[`${configuration.get('overviewRulerLane')}`],
       light: {
-          borderColor: getHexWithAlpha(configuration.get("borderColor")),
+        borderColor: getHexWithAlpha(configuration.get('borderColor')),
       },
       dark: {
-          borderColor: getHexWithAlpha(configuration.get("borderColor")),
+        borderColor: getHexWithAlpha(configuration.get('borderColor')),
       },
       rangeBehavior: DECORATION_RANGE_BEHAVIOR,
     };
@@ -64,15 +64,15 @@ const getTokenConfigurations = (
 };
 
 const getHexWithAlpha = (
-  hex: unknown
+  hex: unknown,
 ): string | undefined => {
-  if (typeof(hex) === 'string') {
+  if (typeof (hex) === 'string') {
     const base = hex.split('.');
     const color = base[0];
     const alpha = Number(base[1]);
 
     switch (true) {
-      case (isNaN(alpha)):
+      case (Number.isNaN(alpha)):
       case (alpha > 100):
         return color + ALPHA_MAP[100];
       case (alpha < 0):
@@ -81,5 +81,4 @@ const getHexWithAlpha = (
         return color + ALPHA_MAP[alpha];
     }
   }
-  return;
 };

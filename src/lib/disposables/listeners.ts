@@ -26,15 +26,15 @@ export const refreshStyleActive = (
   }
 
   const flatRanges: FlatRange[] = [];
-  texts.map(text => {
+  texts.forEach((text) => {
     flatRanges.push(...getPhraseMatches(activeEditor, token.options, text));
   });
 
   const ranges = getRanges(activeEditor, flatRanges);
   const offsets = flatRanges
-    .map(range => range.startOffset)
+    .map((range) => range.startOffset)
     .sort((a, b) => a - b);
-  const positions = offsets.map(offset => activeEditor.document.positionAt(offset));
+  const positions = offsets.map((offset) => activeEditor.document.positionAt(offset));
 
   token.addCachedEditor(activeEditor, offsets, positions, ranges, '');
   activeEditor.setDecorations(token.decorator, ranges);

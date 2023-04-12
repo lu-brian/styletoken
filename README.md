@@ -22,4 +22,5 @@ Hotkeys:
 - Bookmark
 - Find style using text from clipboard
 ## Known Issues:
-- None at the moment
+- Styles are lost when switching between activeEditors
+- Styles are not removed when closing the activeEditor

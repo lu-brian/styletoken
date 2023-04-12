@@ -21,7 +21,7 @@ export class Token {
   getCachedEditor(
     activeEditor: vscode.TextEditor,
   ): CachedEditor | undefined {
-    return this.paths?.[`${activeEditor.document.uri.path}`];
+    return this.paths?.[activeEditor.document.uri.path];
   }
 
   setCachedEditor(

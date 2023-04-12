@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to the "styletokens" extension will be documented in this file.
 
+## [v0.0.6] - 2023-04-12
+### Added
+- removeStyles: removes all styles
+### Fixed
+- linting
 ## [v0.0.5] - 2022-08-31
 ### Fixed
 - all the typos in the changelog :)

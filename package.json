@@ -2,7 +2,7 @@
 	"name": "styletoken",
 	"displayName": "Style Token",
 	"description": "",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"license": "MIT",
 	"publisher": "lu-brian",
 	"repository": {
@@ -18,7 +18,7 @@
 	"activationEvents": [
 		"*"
 	],
-	"main": "./out/extension.js",
+	"main": "./dist/main.js",
 	"contributes": {
 		"configuration": [
 			{
